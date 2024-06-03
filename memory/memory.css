@@ -7,14 +7,16 @@ body {
   background: #401f71;
   color: #fffff0;
 }
-.foto {display: none;}
+.foto {
+  display: none;
+}
 
 header h1 {
   position: relative;
   display: flex;
-  justify-content: end;
+  justify-content: center;
   top: 0.5em;
-  right: 11em;
+  margin-left: 10vw;
 }
 ul {
   position: absolute;
@@ -104,25 +106,28 @@ li {
 .main {
   position: relative;
   display: flex;
-  width: 170vh;
-  justify-content: end;
+  width: 100%;
+  justify-content: center;
   height: 100%;
-  margin-right: 50px;
-  right: 40px;
+  /* margin-right: 50px; */
   top: 2em;
+  flex-wrap: wrap;
 }
 
 .foto-kkn {
   display: grid;
-  grid-auto-flow: dense;
-  grid-template-columns: auto 19em 50px;
+  grid-auto-flow: column;
+  grid-template-columns: auto 20vw 0;
   row-gap: 20px;
   grid-template-rows: auto;
   column-gap: 20px;
   gap: 10px;
 }
-.foto-kkn img, .foto-lab img, .foto-upacara img {
-  width: 300px;
+.foto-kkn img,
+.foto-lab img,
+.foto-upacara img {
+  width: auto;
+  height: 15vw;
   border-radius: 20px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -135,37 +140,43 @@ li {
   -moz-transition: ease 0.3s;
   -ms-transition: ease 0.3s;
   -o-transition: ease 0.3s;
-  animation: fade .5s;
-  -webkit-animation: fade .5s;
+  animation: fade 0.5s;
+  -webkit-animation: fade 0.5s;
 }
-.foto-kkn img:hover, .foto-lab img:hover, .foto-upacara img:hover {
+.foto-kkn img:hover,
+.foto-lab img:hover,
+.foto-upacara img:hover {
   filter: brightness(1);
   -webkit-filter: brightness(1);
   cursor: pointer;
 }
 .foto-kkn img:nth-child(1) {
   height: 100%;
+  width: 20vw;
 }
 .foto-kkn img:nth-child(6) {
   grid-column: 1/3;
-  height: 100%;
-  width: 600px;
+  height: auto;
+  width: 40vw;
   grid-row: 1/3;
 }
 .foto-kkn img:nth-child(4) {
   grid-column: 2/3;
-  height: 400px;
-  width: 600px;
+  height: auto;
+  width: 40vw;
   grid-row: 4/4;
 }
 .foto-upacara {
   gap: 10px;
   grid-column: column;
   grid-template-columns: auto auto;
+  margin-left: 3vw;
 }
 .foto-lab {
-  gap: 10px;
+  gap: 0;
   grid-template-columns: auto auto;
+  margin-left: 25vw;
+  gap: 10px;
 }
 
 @keyframes fade {
@@ -176,7 +187,7 @@ li {
     -moz-transform: translateY(20px);
     -ms-transform: translateY(20px);
     -o-transform: translateY(20px);
-}
+  }
   to {
     opacity: 1;
     transform: translateY(0px);
@@ -184,7 +195,7 @@ li {
     -moz-transform: translateY(0px);
     -ms-transform: translateY(0px);
     -o-transform: translateY(0px);
-}
+  }
 }
 .sidebar {
   position: absolute;
@@ -248,42 +259,53 @@ li {
     justify-content: center;
     width: 100%;
     margin-top: 55px;
-    margin-left: 25px;
-    max-width: 100vh;
+    /* max-width: 100vh; */
   }
-  .foto-kkn,.foto-lab,.foto-upacara {
+  .foto-kkn,
+  .foto-lab,
+  .foto-upacara {
     margin-top: 10px;
   }
   .foto-container {
     position: relative;
     display: flex;
-    width: 100%;
-    margin:0 1em 0 3em;
+    justify-content: center;
+    width: 100vw;
+    height: 70vh;
   }
   .foto-kkn {
-    grid-template-columns: auto;
-    flex: 1;
+    display: grid;
+    grid-auto-flow: dense;
+    flex-wrap: wrap;
+    grid-template-columns: auto auto;
+    margin: 0;
+    gap: 10px;
+    row-gap: 0;
   }
   .foto-kkn img {
-    width: 100%;
-    height: auto;
+    width: 45vw;
+    height: 15vmax;
+  }
+  .foto-kkn img:nth-child(1) {
+    height: 15vmax;
+    width: 45vw;
   }
   .foto-kkn img:nth-child(6) {
     grid-column: 1;
-    height: auto;
-    width: 150px;
+    height: 15vmax;
+    width: 45vw;
     grid-row: 1;
   }
   .foto-kkn img:nth-child(4) {
     grid-row: 1;
-    height: auto;
-    width: 150px;
+    height: 15vmax;
+    width: 45vw;
     grid-row: 1;
   }
   .foto-lab img {
-    width: 100%;
+    width: 90%;
     border-radius: 20px;
-    height: auto;
+    height: 90%;
     filter: brightness(0.8);
     -webkit-filter: brightness(0.8);
     transition: ease 0.3s;
@@ -291,6 +313,12 @@ li {
     -moz-transition: ease 0.3s;
     -ms-transition: ease 0.3s;
     -o-transition: ease 0.3s;
+  }
+  .foto-lab {
+    margin: 0;
+    gap: 10px;
+    height: 60vh;
+    align-content: stretch;
   }
   .foto-lab img:hover {
     filter: brightness(1);
@@ -299,8 +327,8 @@ li {
   }
   .foto-upacara img {
     border-radius: 20px;
-    width: 100%;
-    height: auto;
+    width: 90%;
+    height: 90%;
     filter: brightness(0.8);
     -webkit-filter: brightness(0.8);
     transition: ease 0.3s;
@@ -308,17 +336,18 @@ li {
     -moz-transition: ease 0.3s;
     -ms-transition: ease 0.3s;
     -o-transition: ease 0.3s;
+
   }
   .foto-upacara img:hover {
     filter: brightness(1);
     -webkit-filter: brightness(1);
     cursor: pointer;
   }
-  .foto-upacara,.foto-lab {
+  .foto-upacara,
+  .foto-lab {
     grid-template-columns: auto;
+    justify-items: center;;
   }
-}
-@media (max-width: 476px) {
   .sidebar {
     max-width: 100vh;
     width: 100%;
@@ -333,19 +362,18 @@ li {
     -moz-border-radius: 50px;
     -ms-border-radius: 50px;
     -o-border-radius: 50px;
-}
+  }
   .header h1 {
     position: relative;
-    margin-top: .2em;
+    margin-top: 0.2em;
     margin-left: 0;
-    right: 3em;
     font-size: 25px;
   }
   .title-foto {
     top: -1.5em;
   }
   .fa-solid {
-  font-size: 24px;
+    font-size: 24px;
   }
   .dd-foto {
     display: none;

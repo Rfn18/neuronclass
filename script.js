@@ -81,7 +81,6 @@ ClsStart.addEventListener("click", () => {
 if (localStorage.getItem("page") === "classroom") {
   txt.forEach((element) => {
     element.classList.add("hide");
-    document.getElementById("bg").style = "filter: brightness(80%)";
   });
   classRoom.classList.add("visible");
   user.forEach((item) => {
@@ -90,7 +89,6 @@ if (localStorage.getItem("page") === "classroom") {
 } else if (localStorage.getItem("page") === "start") {
   txt.forEach((element) => {
     element.classList.add("visible");
-    document.getElementById("bg").style = "filter: brightness(100%)";
   });
   classRoom.classList.remove("visible");
 }
